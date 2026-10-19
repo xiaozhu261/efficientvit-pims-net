@@ -1,0 +1,8 @@
+# Local checkpoint archive; the extracted weights are ignored by ../.gitignore.
+/checkpoints.zip
+*.pt
+*.pth
+*.ckpt
+*.safetensors
+*.onnx
+*.engine

@@ -1,0 +1,114 @@
+[
+  {
+    "id": "coco_404795_580399",
+    "image_id": 404795,
+    "annotation_id": 580399,
+    "category_id": 22,
+    "area": 112704
+  },
+  {
+    "id": "coco_37468_639112",
+    "image_id": 37468,
+    "annotation_id": 639112,
+    "category_id": 41,
+    "area": 28301
+  },
+  {
+    "id": "coco_416918_1564101",
+    "image_id": 416918,
+    "annotation_id": 1564101,
+    "category_id": 57,
+    "area": 7476
+  },
+  {
+    "id": "coco_75608_1109791",
+    "image_id": 75608,
+    "annotation_id": 1109791,
+    "category_id": 75,
+    "area": 739
+  },
+  {
+    "id": "coco_26893_1115298",
+    "image_id": 26893,
+    "annotation_id": 1115298,
+    "category_id": 76,
+    "area": 32310
+  },
+  {
+    "id": "coco_214634_1134159",
+    "image_id": 214634,
+    "annotation_id": 1134159,
+    "category_id": 81,
+    "area": 4297
+  },
+  {
+    "id": "coco_503598_668731",
+    "image_id": 503598,
+    "annotation_id": 668731,
+    "category_id": 47,
+    "area": 569
+  },
+  {
+    "id": "coco_142239_38558",
+    "image_id": 142239,
+    "annotation_id": 38558,
+    "category_id": 16,
+    "area": 21671
+  },
+  {
+    "id": "coco_378194_157513",
+    "image_id": 378194,
+    "annotation_id": 157513,
+    "category_id": 5,
+    "area": 15038
+  },
+  {
+    "id": "coco_94625_172822",
+    "image_id": 94625,
+    "annotation_id": 172822,
+    "category_id": 7,
+    "area": 5999
+  },
+  {
+    "id": "coco_166477_2021919",
+    "image_id": 166477,
+    "annotation_id": 2021919,
+    "category_id": 1,
+    "area": 472
+  },
+  {
+    "id": "coco_124569_421516",
+    "image_id": 124569,
+    "annotation_id": 421516,
+    "category_id": 1,
+    "area": 23384
+  },
+  {
+    "id": "coco_232819_489114",
+    "image_id": 232819,
+    "annotation_id": 489114,
+    "category_id": 1,
+    "area": 53243
+  },
+  {
+    "id": "coco_198786_1982931",
+    "image_id": 198786,
+    "annotation_id": 1982931,
+    "category_id": 81,
+    "area": 10433
+  },
+  {
+    "id": "coco_20395_1379166",
+    "image_id": 20395,
+    "annotation_id": 1379166,
+    "category_id": 9,
+    "area": 569
+  },
+  {
+    "id": "coco_38294_1059091",
+    "image_id": 38294,
+    "annotation_id": 1059091,
+    "category_id": 56,
+    "area": 22885
+  }
+]

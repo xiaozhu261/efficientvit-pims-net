@@ -1,0 +1,15 @@
+{
+  "arrays": 3840,
+  "native_formula_exact": 3840,
+  "original_contribution_exact": 3840,
+  "native_contribution_exact": 3840,
+  "monotone_original_masks": 3840,
+  "max_delta_iou_identity_error": 0.0,
+  "calibration_uses_GT": false,
+  "fixed_replay_same_24x16x5": true,
+  "alpha0_bitexact_states": 640,
+  "original_G2_bitexact_states": 160,
+  "unit_tests": 7,
+  "model_and_weights_unchanged": true,
+  "baseline_files_unchanged": 213
+}

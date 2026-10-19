@@ -1,0 +1,169 @@
+{
+  "run_type": "inference_calibration_on_train16_not_generalization",
+  "seed": 42,
+  "manifest": {
+    "path": "pims_net/outputs/gate_calibration16_seed42_20261019/fixed_train16.jsonl",
+    "sha256": "9429733da5ebee8c5c795a2c451dd3256609751debb00f4bf4e96185eca89b2e"
+  },
+  "frozen_s0": {
+    "path": "pims_net/outputs/strength_supervision16_seed42_20261019/S0/best.pt",
+    "sha256": "f5881096623a4061b5c6f403514689fcf60ddd9cf7e60120097fbf036ec82495"
+  },
+  "G2_checkpoint": {
+    "path": "pims_net/outputs/positive_gate16_v2_seed42_20261019/G2/last.pt",
+    "sha256": "4ef51bf5489569b7ddd5d7aabbead06e7b7c2d523f9a26dd84ce709d16e41816"
+  },
+  "epoch": 100,
+  "updates": 800,
+  "alphas": [
+    0.0,
+    0.1,
+    0.25,
+    0.5,
+    0.75,
+    1.0
+  ],
+  "taus": [
+    0.0,
+    0.3,
+    0.5,
+    0.7
+  ],
+  "settings": [
+    {
+      "key": "a0_t0",
+      "alpha": 0.0,
+      "tau": 0.0
+    },
+    {
+      "key": "a0_t0p3",
+      "alpha": 0.0,
+      "tau": 0.3
+    },
+    {
+      "key": "a0_t0p5",
+      "alpha": 0.0,
+      "tau": 0.5
+    },
+    {
+      "key": "a0_t0p7",
+      "alpha": 0.0,
+      "tau": 0.7
+    },
+    {
+      "key": "a0p1_t0",
+      "alpha": 0.1,
+      "tau": 0.0
+    },
+    {
+      "key": "a0p1_t0p3",
+      "alpha": 0.1,
+      "tau": 0.3
+    },
+    {
+      "key": "a0p1_t0p5",
+      "alpha": 0.1,
+      "tau": 0.5
+    },
+    {
+      "key": "a0p1_t0p7",
+      "alpha": 0.1,
+      "tau": 0.7
+    },
+    {
+      "key": "a0p25_t0",
+      "alpha": 0.25,
+      "tau": 0.0
+    },
+    {
+      "key": "a0p25_t0p3",
+      "alpha": 0.25,
+      "tau": 0.3
+    },
+    {
+      "key": "a0p25_t0p5",
+      "alpha": 0.25,
+      "tau": 0.5
+    },
+    {
+      "key": "a0p25_t0p7",
+      "alpha": 0.25,
+      "tau": 0.7
+    },
+    {
+      "key": "a0p5_t0",
+      "alpha": 0.5,
+      "tau": 0.0
+    },
+    {
+      "key": "a0p5_t0p3",
+      "alpha": 0.5,
+      "tau": 0.3
+    },
+    {
+      "key": "a0p5_t0p5",
+      "alpha": 0.5,
+      "tau": 0.5
+    },
+    {
+      "key": "a0p5_t0p7",
+      "alpha": 0.5,
+      "tau": 0.7
+    },
+    {
+      "key": "a0p75_t0",
+      "alpha": 0.75,
+      "tau": 0.0
+    },
+    {
+      "key": "a0p75_t0p3",
+      "alpha": 0.75,
+      "tau": 0.3
+    },
+    {
+      "key": "a0p75_t0p5",
+      "alpha": 0.75,
+      "tau": 0.5
+    },
+    {
+      "key": "a0p75_t0p7",
+      "alpha": 0.75,
+      "tau": 0.7
+    },
+    {
+      "key": "a1_t0",
+      "alpha": 1.0,
+      "tau": 0.0
+    },
+    {
+      "key": "a1_t0p3",
+      "alpha": 1.0,
+      "tau": 0.3
+    },
+    {
+      "key": "a1_t0p5",
+      "alpha": 1.0,
+      "tau": 0.5
+    },
+    {
+      "key": "a1_t0p7",
+      "alpha": 1.0,
+      "tau": 0.7
+    }
+  ],
+  "formula": "g_eff=alpha*g*1[g>=tau], threshold BEFORE alpha; retain g magnitude, no binarization/rescaling.",
+  "update": "P_fused=P_base+g_eff*(1-P_base), positive clicks rounds2-5 only; other outputs exact passthrough.",
+  "feedback": "Each condition feeds its calibrated Mask/logits and frozen S0 updated hidden to its next round, identically to G2 training.",
+  "counterfactual": "P_base and P_fused share one call to frozen S0, identical incoming history/click and updated hidden; branch ONLY at Gate update.",
+  "GT_usage": "Only RITM click simulation and post-hoc metrics; NEVER used for Gate calibration or spatial support.",
+  "probability_threshold": 0.5,
+  "gate_threshold": "raw Gate >= tau",
+  "replay": "Identical S0 epoch100 five-click sequence reused from previous Gate experiment.",
+  "adaptive": "RITM on each calibrated condition own original-resolution P>0.5; same seed42/object RNG.",
+  "metric_grid": "Original image after official SAM Logit postprocessing; native valid256 attribution also saved separately.",
+  "rates": "First-click to fifth-click pooled original pixels. IoU is instance macro mean.",
+  "primary_attribution": "Original G2 alpha1/tau0 trajectories, both protocols; per-round and per-instance positive-click event counts.",
+  "ratio": "K=sum(FN->TP), E=sum(TN->FP); K/E pooled. E=0,K>0 infinite; E=K=0 undefined (null), no epsilon.",
+  "gradients": "torch.inference_mode, all parameters require_grad=False, no optimizer or backward.",
+  "smoke": false
+}

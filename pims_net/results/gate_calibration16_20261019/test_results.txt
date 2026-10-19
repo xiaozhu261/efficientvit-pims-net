@@ -1,0 +1,12 @@
+test_counts_ratio_and_delta_identity (pims_net.tests.test_gate_calibration.GateCalibrationTests.test_counts_ratio_and_delta_identity) ... ok
+test_invalid_calibration_rejected (pims_net.tests.test_gate_calibration.GateCalibrationTests.test_invalid_calibration_rejected) ... ok
+test_negative_exact_and_monotone_endpoints (pims_net.tests.test_gate_calibration.GateCalibrationTests.test_negative_exact_and_monotone_endpoints) ... ok
+test_one_shared_S0_transition (pims_net.tests.test_gate_calibration.GateCalibrationTests.test_one_shared_S0_transition) ... ok
+test_original_setting_matches_G2 (pims_net.tests.test_gate_calibration.GateCalibrationTests.test_original_setting_matches_G2) ... ok
+test_threshold_before_alpha_and_inclusive (pims_net.tests.test_gate_calibration.GateCalibrationTests.test_threshold_before_alpha_and_inclusive) ... ok
+test_zero_alpha_all_thresholds_exact (pims_net.tests.test_gate_calibration.GateCalibrationTests.test_zero_alpha_all_thresholds_exact) ... ok
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.032s
+
+OK
